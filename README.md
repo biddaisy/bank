@@ -3,7 +3,8 @@ The coding challenge task is to create a backend for a simple "banking" applicat
 * Client should be able to deposit money
 * Client should be able to withdraw money
 * Client should be able to see the account balance and statement
-Technology stack
+
+Technology stack:
 * Java 8
 * Spring Boot
 * MSSQL
