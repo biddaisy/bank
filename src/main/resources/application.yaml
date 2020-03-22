@@ -2,8 +2,8 @@ spring:
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     url: jdbc:sqlserver://127.0.0.1:1433;databaseName=bank_db
-    username: Sa
-    password: 123456
+    username:
+    password: 
 
   jpa:
     hibernate:
