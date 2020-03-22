@@ -1,7 +1,7 @@
 package com.softindustry.bank.controller;
 
-import com.softindustry.bank.dto.AccountDto;
-import com.softindustry.bank.dto.mapper.DtoMapper;
+import com.softindustry.bank.controller.dto.AccountDto;
+import com.softindustry.bank.controller.dto.mapper.DtoMapper;
 import com.softindustry.bank.entity.Account;
 import com.softindustry.bank.service.AccountService;
 import lombok.extern.slf4j.Slf4j;
@@ -23,13 +23,11 @@ public class AccountController {
     private final AccountService accountService;
     private final DtoMapper<Account, AccountDto> accountMapper;
 
-
     @Autowired
     public AccountController(AccountService accountService,
                              DtoMapper<Account, AccountDto> accountMapper) {
         this.accountService = accountService;
         this.accountMapper = accountMapper;
-
     }
 
     @GetMapping("api/accounts/{id}")

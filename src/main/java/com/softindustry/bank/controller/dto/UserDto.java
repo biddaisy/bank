@@ -1,4 +1,4 @@
-package com.softindustry.bank.dto;
+package com.softindustry.bank.controller.dto;
 
 import lombok.Builder;
 import lombok.Data;
@@ -10,4 +10,7 @@ public class UserDto {
     private String email;
     private String firstName;
     private String lastName;
+    private String city;
+    private String street;
+    private Integer houseNumber;
 }

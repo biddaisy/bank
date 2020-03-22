@@ -1,7 +1,5 @@
 package com.softindustry.bank.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -13,6 +11,7 @@ import java.util.Objects;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,7 +24,7 @@ public class Address {
     private String street;
 
     @Column(name = "house_number")
-    private String houseNumber;
+    private Integer houseNumber;
 
     @OneToOne
     @JoinColumn(name = "user_id", nullable = false)

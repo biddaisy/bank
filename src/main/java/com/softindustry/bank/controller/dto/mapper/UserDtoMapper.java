@@ -1,6 +1,6 @@
-package com.softindustry.bank.dto.mapper;
+package com.softindustry.bank.controller.dto.mapper;
 
-import com.softindustry.bank.dto.UserDto;
+import com.softindustry.bank.controller.dto.UserDto;
 import com.softindustry.bank.entity.User;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +14,9 @@ public class UserDtoMapper implements DtoMapper<User, UserDto> {
                 .email(from.getEmail())
                 .firstName(from.getFirstName())
                 .lastName(from.getLastName())
+                .city(from.getAddress().getCity())
+                .street(from.getAddress().getStreet())
+                .houseNumber(from.getAddress().getHouseNumber())
                 .build();
     }
 }

@@ -1,4 +1,4 @@
-package com.softindustry.bank.dto;
+package com.softindustry.bank.controller.dto;
 
 import com.softindustry.bank.entity.enums.TransactionType;
 import lombok.Builder;

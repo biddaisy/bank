@@ -1,7 +1,7 @@
-package com.softindustry.bank.dto.mapper;
+package com.softindustry.bank.controller.dto.mapper;
 
-import com.softindustry.bank.dto.AccountDto;
-import com.softindustry.bank.dto.TransactionDto;
+import com.softindustry.bank.controller.dto.AccountDto;
+import com.softindustry.bank.controller.dto.TransactionDto;
 import com.softindustry.bank.entity.Account;
 import com.softindustry.bank.entity.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;

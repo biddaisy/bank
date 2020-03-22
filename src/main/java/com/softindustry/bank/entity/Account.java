@@ -1,10 +1,7 @@
 package com.softindustry.bank.entity;
 import com.softindustry.bank.entity.enums.AccountStatus;
 import com.softindustry.bank.entity.enums.Currency;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -17,6 +14,7 @@ import java.util.Objects;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Account {
     @Id
     @GeneratedValue

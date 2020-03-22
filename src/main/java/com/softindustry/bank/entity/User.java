@@ -1,8 +1,12 @@
 package com.softindustry.bank.entity;
 
 import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
@@ -12,7 +16,8 @@ import java.util.Objects;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+@Builder
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -29,14 +34,50 @@ public class User {
     @Column(name = "email", nullable = false, unique = true, length = 100)
     private String email;
 
-    @Column(name = "is_active")
-    private Boolean isActive;
+    @Column(name = "account_non_expired")
+    private Boolean accountNonExpired;
+
+    @Column(name = "account_non_locked")
+    private Boolean accountNonLocked;
+
+    @Column(name = "credential_non_expired")
+    private Boolean credentialsNonExpired;
+
+    @Column(name = "enable")
+    private Boolean enabled;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Account> accounts;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Address address;
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
+
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return new ArrayList<>();
+    }
+
+    public boolean isAccountNonExpired() {
+        return accountNonExpired;
+    }
+
+
+    public boolean isAccountNonLocked() {
+        return accountNonLocked;
+    }
+
+
+    public boolean isCredentialsNonExpired() {
+        return credentialsNonExpired;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
 
     @Override
     public boolean equals(Object o) {
